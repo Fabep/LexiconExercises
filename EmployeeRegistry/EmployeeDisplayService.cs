@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace ExerciseOne;
+﻿namespace EmployeeRegistry;
 
 public class EmployeeDisplayService
 {
@@ -16,7 +14,7 @@ public class EmployeeDisplayService
     }
     public Employee CreateEmployee()
     {
-        var name = PromptForString("Employee Name: ", x => String.IsNullOrWhiteSpace(x), "Employee name can't be empty.");
+        var name = PromptForString("Employee Name: ", x => string.IsNullOrWhiteSpace(x), "Employee name can't be empty.");
         var salary = PromptForDecimal("Employee Salary: ", x => x <= 0, "Employee salary can't be less than or equal to 0.");
         Employee employee = new(_employeeRepository.GetNextId, name, salary);
 

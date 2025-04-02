@@ -1,4 +1,4 @@
-﻿namespace ExerciseOne;
+﻿namespace EmployeeRegistry;
 
 public class Employee
 {

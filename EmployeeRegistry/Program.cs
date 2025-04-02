@@ -1,6 +1,4 @@
-﻿using ExerciseOne;
-using System.ComponentModel.Design;
-
+﻿using EmployeeRegistry;
 
 
 internal class Program
