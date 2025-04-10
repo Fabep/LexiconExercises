@@ -50,4 +50,22 @@ public static class Utils
         }
         while (true);
     }
+    public static double PromptForDouble(string prompt, Func<double, bool>? optionalValidation = null, string errorMessage = "")
+    {
+        do
+        {
+            string input = PromptForString(prompt);
+
+            if (double.TryParse(input, out double value))
+            {
+                if (optionalValidation is not null && optionalValidation(value))
+                    return value;
+
+                Console.WriteLine($"Invalid input. {errorMessage}");
+            }
+            else
+                Console.WriteLine($"Invalid input. Input was not a double.");
+        }
+        while (true);
+    }
 }
